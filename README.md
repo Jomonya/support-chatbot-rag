@@ -4,7 +4,7 @@ A working retrieval-augmented generation (RAG) chatbot that answers customer
 support questions grounded in a real knowledge base — built end-to-end with
 a free-tier LLM API, so it costs nothing to run.
 
-**Live demo:** _(add your Streamlit Cloud link here)_
+**Live demo:** https://support-chatbot-rag-494tybzpclevykh3e4kq95.streamlit.app/
 
 ## What it does
 
