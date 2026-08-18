@@ -7,6 +7,7 @@ Run with:
 
 import streamlit as st
 from chatbot import SupportChatbot
+from rag import build_index, get_collection
 import os
 
 st.set_page_config(page_title="Support Chatbot", page_icon="💬")
@@ -15,6 +16,15 @@ st.title("💬 Customer Support Chatbot")
 if not os.environ.get("GEMINI_API_KEY"):
     st.error("GEMINI_API_KEY is not set. Set it in your environment before running this app.")
     st.stop()
+
+# Build the vector index on first run (e.g. fresh deploy with no chroma_db/ yet).
+if "index_ready" not in st.session_state:
+    with st.spinner("Setting up knowledge base..."):
+        try:
+            get_collection()  # raises if the collection doesn't exist yet
+        except Exception:
+            build_index()
+    st.session_state.index_ready = True
 
 if "bot" not in st.session_state:
     st.session_state.bot = SupportChatbot()
@@ -40,7 +50,7 @@ with st.sidebar:
     st.header("About")
     st.write(
         "This bot answers questions using the documents in `knowledge_base/`. "
-        "Edit those files and re-run `python3 rag.py` to update what it knows."
+        "Edit those files and rerun to update what it knows."
     )
     if st.button("Reset conversation"):
         st.session_state.bot.reset()
