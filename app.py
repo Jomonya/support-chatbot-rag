@@ -49,8 +49,14 @@ if prompt := st.chat_input("Ask a question about your order, shipping, returns..
 with st.sidebar:
     st.header("About")
     st.write(
-        "This bot answers questions using the documents in `knowledge_base/`. "
-        "Edit those files and rerun to update what it knows."
+        "**RAG-powered customer support chatbot**, built to demonstrate "
+        "retrieval-augmented generation end-to-end.\n\n"
+        "**Stack:** Google Gemini API · ChromaDB (vector search) · "
+        "sentence-transformers (local embeddings) · Streamlit\n\n"
+        "Answers are grounded strictly in a custom knowledge base — no "
+        "hallucinated policies, and it flags anything it doesn't know for "
+        "human follow-up.\n\n"
+        "[View source on GitHub](https://github.com/Jomonya/support-chatbot-rag)"
     )
     if st.button("Reset conversation"):
         st.session_state.bot.reset()
