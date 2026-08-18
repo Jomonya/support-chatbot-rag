@@ -1,0 +1,13 @@
+Account and Payment FAQ
+
+Accepted payment methods: Visa, Mastercard, American Express, Discover, PayPal, and Apple Pay.
+
+We do not accept payment by check, wire transfer, or cryptocurrency.
+
+To reset your password: click "Forgot Password" on the login page and follow the emailed link. The link expires after 1 hour.
+
+To update your email or shipping address: go to "Account Settings" while logged in. Changing your email requires re-verifying via a confirmation email.
+
+Subscription/membership: Our membership program costs $7.99/month and includes free standard shipping and early access to sales. You can cancel anytime from Account Settings > Membership; cancellation takes effect at the end of the current billing cycle, no partial refunds.
+
+If you were charged twice for the same order, this is usually a temporary authorization hold, not a duplicate charge, and it should disappear within 3-5 business days. If it doesn't, contact support with both charge amounts and dates.
