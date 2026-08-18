@@ -4,7 +4,7 @@ A working retrieval-augmented generation (RAG) chatbot that answers customer
 support questions grounded in a real knowledge base — built end-to-end with
 a free-tier LLM API, so it costs nothing to run.
 
-**Live demo:** _(add your Streamlit Cloud link here once deployed)_
+**Live demo:** _(add your Streamlit Cloud link here)_
 
 ## What it does
 
@@ -20,10 +20,11 @@ flags the question for a human agent instead of guessing.
    `sentence-transformers`, storing everything in a persistent Chroma
    vector database (no embedding API cost).
 3. **`chatbot.py`** — on each user question, retrieves the most relevant
-   chunks and sends them to Gemini along with the question, so every
-   answer is grounded in real content rather than the model's own
+   chunks and sends them to the Gemini API along with the question, so
+   every answer is grounded in real content rather than the model's own
    assumptions.
-4. **`app.py`** — a Streamlit chat interface on top of the whole pipeline.
+4. **`app.py`** — a Streamlit chat interface on top of the whole pipeline,
+   with automatic index building on first run so it deploys cleanly.
 
 ## Skills demonstrated
 
@@ -35,6 +36,8 @@ flags the question for a human agent instead of guessing.
   for sensitive requests (anger, fraud, legal issues)
 - **Applied Python** — Chroma vector DB, sentence-transformers, clean
   separation of retrieval logic, chat logic, and UI
+- **Deployment** — live on Streamlit Community Cloud with secrets
+  management for the API key
 - **Product thinking** — designed for a real support use case, including
   what happens when the bot doesn't know the answer
 
